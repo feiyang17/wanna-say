@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Express Love</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+	<style>
+		html {
+			height: 100%;
+		}
+
+		body {
+			height: 100%;
+			background: url('assets/images/background.png') no-repeat;
+			background-size: cover;
+			margin: 0;
+		}
+
+		/*CD*/
+		.cd {
+			position: relative;
+			height: 60%;
+			vertical-align: middle;
+			width: 100%;
+			overflow: hidden;
+		}
+
+		.box {
+			position: absolute;
+			width: 45%;
+			height: 43%;
+			background: url(assets/images/box.png) no-repeat;
+			background-size: contain;
+			display: inline-block;
+			top: 50%;
+			left: -100%;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			z-index: 44;
+		}
+
+		.album {
+			position: absolute;
+			width: 45%;
+			height: 43%;
+			background: url(assets/images/album.png) no-repeat;
+			background-size: contain;
+			display: inline-block;
+			top: 50%;
+			right: -100%;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+
+		@keyframes boxAnim{
+            0% {
+				left: -100%;
+            }
+			100% {
+				left: 15%;
+			}
+		}
+
+		@-webkit-keyframes boxAnim {
+            0% {
+				left: -100%;
+            }
+			100% {
+				left: 15%;
+			}
+		}
+
+		.box-drift {
+			-webkit-animation: boxAnim 2s linear;
+        	animation: boxAnim 2s linear;
+        	-webkit-animation-fill-mode: forwards;
+        	animation-fill-mode: forwards;
+		}
+
+		@keyframes albumAnim{
+            0% {
+				right: -100%;
+            }
+			100% {
+				right: 15%;
+			}
+		}
+
+		@-webkit-keyframes albumAnim {
+            0% {
+				right: -100%;
+            }
+			100% {
+				right: 15%;
+			}
+		}
+
+		.album-drift {
+			-webkit-animation: albumAnim 2s linear;
+        	animation: albumAnim 2s linear;
+        	-webkit-animation-fill-mode: forwards;
+        	animation-fill-mode: forwards;
+		}
+
+		.operate-btn {
+			list-style: none;
+			text-align: center;
+		}
+
+		.operate-btn li{
+			display: inline-block;
+			height: 100px;
+			width: 65px;
+			margin-right: 20px;
+		}
+
+		#timing {
+			margin: 0;
+			text-align: center;
+			font-size: 25px;
+			color: white;
+		} 
+
+		#redo {
+			background: url(assets/images/redo.png) no-repeat;
+			background-size: contain;
+		}
+
+		#play {
+			background: url(assets/images/begin.png) no-repeat;
+			background-size: contain;
+		}
+
+		#share {
+			background: url(assets/images/share.png) no-repeat;
+			background-size: contain;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- <audio autoplay src="assets/media/music.mp3"></audio> -->
+	<!-- 留声机 -->
+	<div class="cd">
+		<div class="box"></div>
+		<div class="album"></div>
+	</div>
+	<!-- 计时 -->
+	<ul class="operate-btn">
+		<li id="redo"></li>
+		<li id="play"></li>
+		<li id="share"></li>
+	</ul>
+</body>
+<script src="assets/js/zepto.js"></script>
+<script src="assets/js/generate.js"></script>
+</html>
