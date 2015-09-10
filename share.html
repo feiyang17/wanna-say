@@ -149,7 +149,7 @@
 		.operate-btn li{
 			display: inline-block;
 			height: 100px;
-			width: 65px;
+			width: 70px;
 			margin-right: 20px;
 		}
 
@@ -163,28 +163,13 @@
 			border-radius: 2px;
 		} 
 
-		#record {
+		#play {
 			background: url(assets/images/begin.png) no-repeat;
 			background-size: contain;
 		}
 
-		#stop {
-			background: url(assets/images/stop-disable.png) no-repeat;
-			background-size: contain;
-		}
-
-		#stop.active {
-			background: url(assets/images/stop.png) no-repeat;
-			background-size: contain;
-		}
-
-		#save {
-			background: url(assets/images/save-disable.png) no-repeat;
-			background-size: contain;
-		}
-
-		#save.active {
-			background: url(assets/images/save.png) no-repeat;
+		#share {
+			background: url(assets/images/share.png) no-repeat;
 			background-size: contain;
 		}
 
@@ -202,14 +187,11 @@
 		<div id="album"></div>
 	</div>
 	<!-- 计时 -->
-	<p id="timing">00:00</p>
 	<ul class="operate-btn">
-		<li id="record"></li>
-		<li id="stop"></li>
-		<li id="save"></li>
+		<li id="play"></li>
+		<li id="share"></li>
 	</ul>
 </body>
 <script src="assets/js/zepto.js"></script>
-<script src="assets/js/recoder.js"></script>
-<script src="assets/js/index.js"></script>
+<script src="assets/js/share.js"></script>
 </html>
