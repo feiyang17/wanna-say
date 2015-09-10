@@ -5,26 +5,85 @@
 	<title>Express Love</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
 	<style>
-		.button {
+		html {
+			height: 100%;
+		}
+
+		body {
+			height: 100%;
+			background: url('assets/images/background.png') no-repeat;
+			background-size: cover;
+			margin: 0;
+		}
+
+		.phonograph {
+			position: relative;
+			height: 60%;
+		}
+
+		.arm {
+			margin: 0;
+			position: absolute;
+			background: url(assets/images/arm.png) no-repeat;
+			background-size: contain;
+			height: 35%;
+			width: 20%;
+			left: 45%;
+			z-index: 100;
+		}
+
+		.album {
+			height: 65%;
+			width: 70%;
+			position: absolute;
+			background: url(assets/images/album.png) no-repeat;
+			background-size: contain;
+			top: 20%;
+			left: 15%;
+		}
+
+		.operate-btn {
 			list-style: none;
 		}
 
-		.button li{
+		.operate-btn li{
 			display: inline-block;
-			border: 1px solid;
+			height: 100px;
+			width: 65px;
+			margin-right: 20px;
 		}
 
-		button {
-			font-size: 30px;
+		#record {
+			background: url(assets/images/begin.png) no-repeat;
+			background-size: contain;
 		}
+
+		#stop {
+			background: url(assets/images/stop.png) no-repeat;
+			background-size: contain;
+		}
+
+		#save {
+			background: url(assets/images/save.png) no-repeat;
+			background-size: contain;
+		}
+
 	</style>
 </head>
 <body>
-	<audio autoplay src="assets/media/music.mp3"></audio>
-	<ul class="button">
-		<li><button id="record">录音</button></li>
-		<li><button id="stop">停止</button></li>
-		<li><button>播放</button></li>
+	<!-- <audio autoplay src="assets/media/music.mp3"></audio> -->
+	<!-- 留声机 -->
+	<div class="phonograph">
+		<!-- 柄 -->
+		<p class="arm"></p>
+		<!-- 碟 -->
+		<div class="album"></div>
+	</div>
+
+	<ul class="operate-btn">
+		<li id="record"></li>
+		<li id="stop"></li>
+		<li id="save"></li>
 	</ul>
 </body>
 <script src="assets/js/zepto.js"></script>
