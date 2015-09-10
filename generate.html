@@ -4,6 +4,11 @@
 	<meta charset="UTF-8">
 	<title>Express Love</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+	<script>
+		var hash = location.hash;
+		var audioSrc = hash.split('=')[1];
+		alert(audioSrc);
+	</script>
 	<style>
 		html {
 			height: 100%;
@@ -111,9 +116,8 @@
 
 		.operate-btn li{
 			display: inline-block;
-			height: 90px;
-			width: 70px;
-			margin-right: 20px;
+			height: 75px;
+			width: 55px;
 		}
 
 		#timing {
@@ -131,11 +135,36 @@
 		#play {
 			background: url(assets/images/begin.png) no-repeat;
 			background-size: contain;
+			margin-left: 20px;
 		}
 
 		#share {
 			background: url(assets/images/share.png) no-repeat;
 			background-size: contain;
+			margin-left: 20px;
+		}
+
+		#recording, #maked {
+			font-weight: 300;
+			height: 50px;
+			width: 55%;
+			border-radius: 5px;
+			background-color: rgba(239, 239, 239, .4);
+			position: absolute;
+			bottom: 0px;
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			font-size: 25px;
+			text-align: center;
+			line-height: 50px;
+			margin: 0;
+		}
+
+		#maked {
+			background: url(assets/images/ok.png) no-repeat 25px 50%;
+			text-indent: 38px;
+			background-color: rgba(239, 239, 239, .4);
+			background-size: 35px 35px;
 		}
 
 	</style>
@@ -144,13 +173,18 @@
 	<!-- <audio autoplay src="assets/media/music.mp3"></audio> -->
 	<!-- 留声机 -->
 	<div class="cd">
+		<h3 id="recording">正在刻录中...</h3>
+		<h3 style="display: none" id="maked">制作完成</h3>
 		<div class="box"></div>
 		<div class="album"></div>
 	</div>
 	<!-- 计时 -->
 	<ul class="operate-btn">
 		<li id="redo"></li>
-		<li id="play"></li>
+		<li id="play">
+			<!-- <audio id="voice" src="10.19.6.113:8800/upload/record011863921985.mp3"></audio> -->
+			<audio id="voice" src=""></audio>
+		</li>
 		<li id="share"></li>
 	</ul>
 </body>
