@@ -94,7 +94,7 @@
 		// 保存
 		$save.on('click', function() {
 			if ($stop.hasClass('active')) {
-				window.location.href = './generate.html';
+				// window.location.href = './generate.html';
 				try {
 					control.record(2);
 				} catch (e) {
